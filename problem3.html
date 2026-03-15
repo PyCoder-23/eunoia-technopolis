@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission 003 — Technopolis Protocol</title>
+  <meta name="description" content="Mission 003: System Gamma Malfunction. Restore the third critical system of Eunoia Technopolis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/problem.css" />
+</head>
+<body data-music="assets/music/command_center.mp3">
+
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div id="page-transition"></div>
+  <button id="music-toggle" title="Toggle Music" aria-label="Toggle background music">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+
+  <nav class="top-nav">
+    <a href="index.html" class="nav-logo">⚡ TECHNOPOLIS PROTOCOL</a>
+    <ul class="nav-links">
+      <li><a href="challenges.html">MISSIONS</a></li>
+    </ul>
+  </nav>
+
+  <div class="problem-hero">
+    <div class="problem-breadcrumb">
+      <a href="challenges.html" id="back-btn">← COMMAND CENTER</a> / MISSION 003
+    </div>
+    <div class="problem-meta">
+      <span class="problem-id">MISSION // 003</span>
+      <span class="badge badge-easy">EASY</span>
+    </div>
+    <h1><span class="highlight">System Gamma</span> Malfunction</h1>
+    <p class="problem-tagline">Aerial Grid — Zone C &nbsp;·&nbsp; Algorithmic Crisis Level: LOW</p>
+    <div class="hero-divider"></div>
+  </div>
+
+  <div class="problem-content">
+
+    <div class="story-section">
+      <div class="story-label">INCIDENT REPORT</div>
+      <div class="story-text">
+        <p data-typewriter>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Across the Aerial Grid of Zone C, autonomous units have lost their navigational coordination — hundreds of them are now drifting without direction.</p>
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque. Without a functioning pathfinding algorithm, mid-air collisions are inevitable and supply deliveries across Eunoia Technopolis will grind to a halt.</p>
+        <p>Nam libero tempore cum soluta nobis eligendi optio cumque nihil impedit. <strong>You must recalibrate the coordination matrix before the aerial grid shuts down permanently.</strong></p>
+      </div>
+    </div>
+
+    <div class="mission-section">
+      <div class="mission-label">MISSION OBJECTIVE</div>
+      <p class="mission-objective">
+        <strong>[Placeholder]</strong> — This mission objective will be filled in once the problem details are provided.
+        Your algorithm must efficiently handle the pathfinding and coordination challenges
+        in Zone C's aerial grid under the given time and memory constraints.
+      </p>
+    </div>
+
+    <div class="problem-statement">
+      <div class="problem-tabs">
+        <div class="problem-tab active" data-tab="tab-statement-3">STATEMENT</div>
+        <div class="problem-tab" data-tab="tab-examples-3">EXAMPLES</div>
+        <div class="problem-tab" data-tab="tab-constraints-3">CONSTRAINTS</div>
+      </div>
+
+      <div class="problem-tab-content active" id="tab-statement-3">
+        <div class="ps-section">
+          <h3>Problem</h3>
+          <p>[Problem statement placeholder] — Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+        </div>
+        <div class="ps-section">
+          <h3>Input</h3>
+          <p>[Input format placeholder] — Describe the input format here.</p>
+        </div>
+        <div class="ps-section">
+          <h3>Output</h3>
+          <p>[Output format placeholder] — Describe the expected output here.</p>
+        </div>
+      </div>
+
+      <div class="problem-tab-content" id="tab-examples-3">
+        <div class="ps-section">
+          <h3>Sample Input 1</h3>
+          <div class="io-sample">
+            <div class="io-sample-header"><span>INPUT</span><span>Sample 1</span></div>
+            <pre>3 4
+0 1 0 0
+0 1 0 1
+0 0 0 0</pre>
+          </div>
+          <h3>Sample Output 1</h3>
+          <div class="io-sample">
+            <div class="io-sample-header"><span>OUTPUT</span><span>Sample 1</span></div>
+            <pre>5</pre>
+          </div>
+          <p style="color:rgba(200,216,240,0.4); font-family:var(--font-mono); font-size:.75rem; margin-top:.5rem;">[Explanation placeholder]</p>
+        </div>
+      </div>
+
+      <div class="problem-tab-content" id="tab-constraints-3">
+        <div class="ps-section">
+          <h3>Constraints</h3>
+          <table class="constraints-table">
+            <tr><td>Time Limit</td><td>2 seconds</td></tr>
+            <tr><td>Memory Limit</td><td>256 MB</td></tr>
+            <tr><td>N, M</td><td>1 ≤ N, M ≤ [placeholder]</td></tr>
+            <tr><td>Values</td><td>[constraint placeholder]</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-section">
+      <div class="mission-complete">// SOLUTION READY? UPLOAD TO CODEFORCES</div>
+      <h2>Submit Your Fix, Commander</h2>
+      <p>Your code will be judged on the Codeforces platform. Make sure your solution compiles and handles all edge cases.</p>
+      <div class="submit-actions">
+        <a href="https://codeforces.com/contest/YOUR_CONTEST_ID/submit/C" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="submit-btn">⚡ SUBMIT SOLUTION</a>
+        <a href="challenges.html" class="btn btn-secondary">← BACK TO MISSIONS</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="problem-nav">
+    <a href="problem2.html">← MISSION 002</a>
+    <a href="problem4.html">NEXT MISSION: 004 →</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/problem.js"></script>
+</body>
+</html>

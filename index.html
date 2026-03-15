@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technopolis Protocol — Eunoia Technopolis</title>
+  <meta name="description" content="Commander Eunoix — Guardian of Algorithmic Harmony. A story-driven competitive programming experience." />
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── Reveal overrides for cinematic slides ── */
+    html, body { background: #030712 !important; }
+
+    .reveal-viewport,
+    .reveal,
+    .reveal .slides {
+      height: 100vh !important;
+      width: 100vw !important;
+      background: transparent !important;
+    }
+
+    .reveal .slides section {
+      height: 100vh;
+      width: 100vw;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 4rem;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Hide default Reveal controls / progress */
+    .reveal .controls          { display: none !important; }
+    .reveal .progress          { height: 2px; background: rgba(0,212,255,0.08); }
+    .reveal .progress span     { background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple)); }
+
+    /* Slide backgrounds */
+    .reveal .slides section .slide-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    /* ── Slide-specific styles ── */
+    .slide-city-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      background: linear-gradient(135deg, #fff 0%, var(--neon-blue) 60%, var(--neon-purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px rgba(0,212,255,0.5));
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide-year {
+      font-family: var(--font-mono);
+      font-size: clamp(0.8rem, 2vw, 1.1rem);
+      color: rgba(0,212,255,0.6);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+    }
+
+    .slide-body-text {
+      font-family: var(--font-body);
+      font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+      font-weight: 400;
+      color: rgba(200, 216, 240, 0.85);
+      line-height: 1.6;
+      max-width: 750px;
+    }
+
+    .slide-body-text em {
+      color: var(--neon-blue);
+      font-style: normal;
+      text-shadow: var(--glow-text);
+    }
+
+    .slide-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--neon-purple);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .slide-hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 14vw, 10rem);
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 40px rgba(0,212,255,0.7));
+      line-height: 1;
+      animation: text-glow-pulse 3s ease infinite;
+    }
+
+    .slide-hero-subtitle {
+      font-family: var(--font-mono);
+      font-size: clamp(0.65rem, 1.5vw, 0.9rem);
+      color: rgba(200,216,240,0.5);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .slide-you-text {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.08em;
+    }
+
+    .slide-you-text em {
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal;
+    }
+
+    .slide-timer {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--neon-pink);
+      text-shadow: 0 0 20px rgba(236,72,153,0.7);
+      letter-spacing: 0.1em;
+    }
+
+    .slide-timer-sub {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: rgba(200,216,240,0.45);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    /* Gradient slide backgrounds — ALL slides are explicitly dark */
+    .reveal .slides section {
+      background: linear-gradient(160deg, #030712, #08112a);
+    }
+    .bg-s1 { background: radial-gradient(ellipse at 30% 60%, rgba(0,212,255,0.08), transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(168,85,247,0.08), transparent 60%), linear-gradient(160deg, #030712, #08112a) !important; }
+    .bg-s2 { background: radial-gradient(ellipse at 60% 40%, rgba(0,212,255,0.06), transparent 60%), linear-gradient(160deg, #030712, #071020) !important; }
+    .bg-s3 { background: radial-gradient(ellipse at center, rgba(236,72,153,0.06), transparent 70%), linear-gradient(160deg, #030712, #14040f) !important; }
+    .bg-s4 { background: radial-gradient(ellipse at center, rgba(236,72,153,0.08), transparent 60%), linear-gradient(160deg, #0e0008, #030712) !important; }
+    .bg-s5 { background: radial-gradient(ellipse at 40% 60%, rgba(168,85,247,0.06), transparent 60%), linear-gradient(160deg, #030712, #080418) !important; }
+    .bg-s6 { background: radial-gradient(ellipse at center, rgba(168,85,247,0.15), transparent 60%), linear-gradient(160deg, #080010, #030712) !important; }
+    .bg-s7 { background: radial-gradient(ellipse at center, rgba(0,212,255,0.1),  transparent 60%), linear-gradient(160deg, #00080f, #030712) !important; }
+    .bg-s8 { background: radial-gradient(ellipse at center top, rgba(236,72,153,0.1), transparent 60%), linear-gradient(160deg, #100008, #030712) !important; }
+    .bg-s9 { background: radial-gradient(ellipse at center bottom, rgba(0,212,255,0.12), transparent 60%), linear-gradient(160deg, #030712, #0a0f1e) !important; }
+
+    /* Slide decorative lines */
+    .slide-hline {
+      width: 120px; height: 2px;
+      background: linear-gradient(to right, transparent, var(--neon-blue), transparent);
+      margin: 1.5rem auto;
+      box-shadow: 0 0 10px rgba(0,212,255,0.4);
+    }
+
+    /* Progress dots navigation */
+    .slide-nav {
+      position: fixed;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      z-index: 9000;
+    }
+
+    .slide-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(0,212,255,0.25);
+      border: 1px solid rgba(0,212,255,0.35);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .slide-dot.active {
+      background: var(--neon-blue);
+      box-shadow: var(--glow-blue);
+      transform: scale(1.4);
+    }
+
+    /* Skip button */
+    #skip-btn {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: rgba(200,216,240,0.3);
+      background: none;
+      border: 1px solid rgba(200,216,240,0.15);
+      padding: 0.4rem 0.9rem;
+      border-radius: 3px;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      z-index: 9000;
+      transition: all 0.3s;
+    }
+
+    #skip-btn:hover {
+      color: var(--neon-blue);
+      border-color: rgba(0,212,255,0.4);
+    }
+
+    /* CTA button on last slide */
+    .cta-enter {
+      font-family: var(--font-display);
+      font-size: clamp(0.85rem, 2vw, 1.1rem);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--neon-blue);
+      text-decoration: none;
+      border: 2px solid var(--neon-blue);
+      padding: 1.1em 3.5em;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      background: rgba(0,212,255,0.06);
+      box-shadow: var(--glow-blue), inset 0 0 30px rgba(0,212,255,0.04);
+      transition: all 0.3s;
+      animation: pulse-glow 2.5s ease-in-out infinite;
+    }
+
+    .cta-enter::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(168,85,247,0.15));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .cta-enter:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(0,212,255,0.9), 0 0 100px rgba(0,212,255,0.3);
+    }
+
+    .cta-enter:hover::before { opacity: 1; }
+
+    /* Scanline effect for dramatic slides */
+    .scanline-fx::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, transparent, rgba(0,212,255,0.2), transparent);
+      animation: scanline 4s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes scanline {
+      0%   { top: -10px; }
+      100% { top: 110%; }
+    }
+
+    /* Glitch effect on hero name */
+    @keyframes glitch1 {
+      0%, 92%, 100% { clip-path: none; transform: none; }
+      93% { clip-path: polygon(0 20%, 100% 20%, 100% 40%, 0 40%); transform: translate(-4px, 2px); }
+      95% { clip-path: polygon(0 60%, 100% 60%, 100% 75%, 0 75%); transform: translate(4px, -2px); }
+    }
+
+    .glitch { animation: glitch1 8s infinite; }
+
+    /* Arrow hint */
+    .scroll-hint {
+      position: fixed;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: rgba(0,212,255,0.35);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 8000;
+      animation: float 2s ease-in-out infinite;
+      transition: opacity 0.5s ease;
+    }
+
+    .scroll-hint svg { opacity: 0.5; }
+
+    /* ── Start Screen Overlay ── */
+    #start-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: radial-gradient(circle at center, rgba(0, 212, 255, 0.15), var(--color-bg) 70%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(20px);
+      transition: opacity 1s ease, visibility 1s;
+    }
+
+    #start-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .start-logo {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      color: var(--neon-blue);
+      text-shadow: var(--glow-blue);
+      margin-bottom: 3rem;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .start-btn {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: #fff;
+      background: rgba(0, 212, 255, 0.1);
+      border: 2px solid var(--neon-blue);
+      padding: 1.2em 3.5em;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: var(--glow-blue);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .start-btn:hover {
+      background: var(--neon-blue);
+      color: #000;
+      box-shadow: 0 0 50px var(--neon-blue);
+      transform: scale(1.05);
+    }
+
+    .start-hint {
+      margin-top: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: rgba(0, 212, 255, 0.4);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* ── Typewriter system ── */
+    /* Elements with data-tw are hidden until JS reveals them */
+    [data-tw] { opacity: 0; transition: opacity 0.1s; }
+    [data-tw].tw-done { opacity: 1; }
+
+    /* Decorative elements that just fade in */
+    [data-fade] {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    [data-fade].fade-done {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Typewriter cursor */
+    .tw-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--neon-blue);
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: twBlink 0.7s step-end infinite;
+      box-shadow: 0 0 8px var(--neon-blue);
+    }
+    @keyframes twBlink { 50% { opacity: 0; } }
+  </style>
+</head>
+<body data-music="assets/music/intro.mp3">
+
+  <!-- Background layers -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div id="page-transition"></div>
+
+  <!-- Music toggle -->
+  <button id="music-toggle" title="Toggle Music" aria-label="Toggle background music">
+    <!-- Icon injected by JS -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+
+  <!-- Start Screen Experience Initiator -->
+  <div id="start-screen">
+    <div class="start-logo">TECHNOPOLIS<br/>PROTOCOL</div>
+    <button class="start-btn" id="init-btn">INITIATE CONNECTION</button>
+    <div class="start-hint">ENCRYPTED CHANNEL STANDING BY</div>
+  </div>
+
+  <!-- Side navigation dots -->
+  <nav class="slide-nav" id="slide-nav" aria-label="Slide navigation"></nav>
+
+  <!-- Skip to end -->
+  <button id="skip-btn">SKIP INTRO ›</button>
+
+  <!-- Scroll hint (hidden on last slide) -->
+  <div class="scroll-hint" id="scroll-hint">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    ADVANCE
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+
+  <!-- ─────────────────────────────────────────────────
+       REVEAL.JS SLIDES
+       ───────────────────────────────────────────────── -->
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ─── SLIDE 1 — City Title ─── -->
+      <section class="bg-s1">
+        <div class="slide-year" data-tw="YEAR 2147" data-tw-speed="30" data-tw-color="rgba(0,212,255,0.6)"></div>
+        <div class="slide-hline" data-fade style="margin-top:.5rem;"></div>
+        <h1 class="slide-city-name" data-tw="EUNOIA TECHNOPOLIS" data-tw-speed="55" data-tw-delay="300"></h1>
+        <p class="slide-year" data-tw="COORDINATES 31.7°N · 77.1°E · ALTITUDE 1240m" data-tw-speed="22" data-tw-delay="1200" style="margin-top:1.5rem;"></p>
+      </section>
+
+      <!-- ─── SLIDE 2 — Infrastructure ─── -->
+      <section class="bg-s2">
+        <div class="slide-label" data-tw="CITY REPORT — 2147.03.15" data-tw-speed="28"></div>
+        <p class="slide-body-text" data-tw="Traffic grids, hospitals, delivery drones, power networks — every single system in Eunoia Technopolis runs on code." data-tw-speed="16" data-tw-delay="400"></p>
+        <div class="slide-hline" data-fade data-fade-delay="1800"></div>
+        <p class="slide-body-text" data-tw="8.4 million citizens. Zero tolerance for failure." data-tw-speed="22" data-tw-delay="2000" style="font-size:clamp(.85rem,2vw,1.2rem); color:rgba(200,216,240,0.5);"></p>
+      </section>
+
+      <!-- ─── SLIDE 3 — Something's wrong ─── -->
+      <section class="bg-s3 scanline-fx">
+        <div class="slide-label" data-tw="⚠  SYSTEM ALERT" data-tw-speed="40" style="color:var(--neon-pink);"></div>
+        <p class="slide-body-text" data-tw="But today…" data-tw-speed="80" data-tw-delay="500" style="color:#fff; font-size:clamp(1.5rem,4vw,2.8rem); font-weight:600;"></p>
+        <p class="slide-body-text" data-tw="something has gone terribly wrong." data-tw-speed="45" data-tw-delay="1400" style="color:var(--neon-pink); font-size:clamp(1.3rem,3.5vw,2.4rem);"></p>
+      </section>
+
+      <!-- ─── SLIDE 4 — Systems failing ─── -->
+      <section class="bg-s4">
+        <div class="slide-label" data-tw="CRITICAL FAILURE DETECTED" data-tw-speed="35" style="color:var(--neon-pink);"></div>
+        <p class="slide-body-text" data-tw="Critical systems across Eunoia Technopolis are failing one by one." data-tw-speed="20" data-tw-delay="400" style="color:rgba(200,216,240,0.9);"></p>
+        <div class="fail-log" data-fade data-fade-delay="1400" style="margin-top:2rem; display:flex; flex-direction:column; gap:.5rem; font-family:var(--font-mono); font-size:.78rem; color:rgba(236,72,153,0.7);">
+          <div>[ FAIL ] MISSION_001 — STATUS: OFFLINE</div>
+          <div>[ FAIL ] MISSION_002 — STATUS: OFFLINE</div>
+          <div>[ FAIL ] MISSION_003 — STATUS: OFFLINE</div>
+          <div>[ FAIL ] MISSION_004 — STATUS: OFFLINE</div>
+          <div>[ FAIL ] MISSION_005 — STATUS: OFFLINE</div>
+          <div>[ FAIL ] MISSION_006 — STATUS: OFFLINE</div>
+        </div>
+      </section>
+
+      <!-- ─── SLIDE 5 — One hero ─── -->
+      <section class="bg-s5">
+        <p class="slide-body-text" data-tw="With the city on the brink of collapse," data-tw-speed="22" style="color:rgba(200,216,240,0.6); font-size:clamp(1rem,2.5vw,1.6rem);"></p>
+        <p class="slide-body-text" data-tw="there is only one hero who can restore order." data-tw-speed="28" data-tw-delay="900" style="color:#fff; font-size:clamp(1.3rem,3vw,2rem); margin-top:.5rem;"></p>
+        <div class="slide-hline" data-fade data-fade-delay="2200"></div>
+        <p class="slide-body-text" data-tw="ACTIVATING GUARDIAN PROTOCOL…" data-tw-speed="50" data-tw-delay="2500" style="font-size:clamp(.8rem,2vw,1.1rem);color:rgba(200,216,240,0.4); font-family:var(--font-mono); letter-spacing:.2em;"></p>
+      </section>
+
+      <!-- ─── SLIDE 6 — EUNOIX reveal ─── -->
+      <section class="bg-s6">
+        <div class="slide-label" data-tw="GUARDIAN IDENTIFIED" data-tw-speed="40"></div>
+        <div class="slide-hero-name glitch" data-fade data-fade-delay="500" style="font-size:clamp(4rem,14vw,10rem);">EUNOIX</div>
+        <div class="slide-hero-subtitle" data-tw="Commander Eunoix · Guardian of Algorithmic Harmony" data-tw-speed="30" data-tw-delay="900"></div>
+      </section>
+
+      <!-- ─── SLIDE 7 — You are Eunoix ─── -->
+      <section class="bg-s7">
+        <div class="slide-label" data-tw="IDENTITY TRANSFER COMPLETE" data-tw-speed="35"></div>
+        <div class="slide-you-text">
+          <span data-tw="You are " data-tw-speed="60" data-tw-delay="500"></span>
+          <em data-tw="Eunoix." data-tw-speed="60" data-tw-delay="950"></em>
+        </div>
+        <div class="slide-hline" data-fade data-fade-delay="1400"></div>
+        <p class="slide-body-text" data-tw="The city's fate rests in your ability to think, reason, and code. Every algorithm you solve restores a broken system." data-tw-speed="16" data-tw-delay="1700" style="color:rgba(200,216,240,0.55); font-size:clamp(.85rem,2vw,1.15rem);"></p>
+      </section>
+
+      <!-- ─── SLIDE 8 — 2 hours ─── -->
+      <section class="bg-s8">
+        <div class="slide-label" data-tw="MISSION CLOCK ACTIVATED" data-tw-speed="38" style="color:var(--neon-pink);"></div>
+        <div class="slide-timer" data-fade data-fade-delay="500">02:00:00</div>
+        <div class="slide-timer-sub" data-tw="HOURS TO STABILIZE THE CITY" data-tw-speed="40" data-tw-delay="700"></div>
+        <div class="slide-hline" data-fade data-fade-delay="1500" style="background:linear-gradient(to right,transparent,var(--neon-pink),transparent);box-shadow:0 0 10px rgba(236,72,153,.4);"></div>
+        <p class="slide-body-text" data-tw="Six systems. Six algorithmic crises. Solve them all before time runs out." data-tw-speed="20" data-tw-delay="1800" style="font-size:clamp(.85rem,2vw,1.15rem); color:rgba(200,216,240,0.55);"></p>
+      </section>
+
+      <!-- ─── SLIDE 9 — Enter Command Center ─── -->
+      <section class="bg-s9">
+        <div class="slide-label" data-tw="COMMAND CENTER — STANDING BY" data-tw-speed="35"></div>
+        <h2 class="slide-city-name" data-fade data-fade-delay="600" style="font-size:clamp(1.8rem,5vw,3.5rem);">READY,<br/>COMMANDER?</h2>
+        <div class="slide-hline" data-fade data-fade-delay="900"></div>
+        <a href="challenges.html" class="cta-enter" data-fade data-fade-delay="1200" id="enter-btn">
+          ⚡ ENTER COMMAND CENTER
+        </a>
+        <p data-fade data-fade-delay="1600" style="margin-top:1rem; font-family:var(--font-mono); font-size:.65rem; color:rgba(200,216,240,.25); letter-spacing:.15em;">
+          EUNOIA TECHNOPOLIS · GUARDIAN PROTOCOL v2.0
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────────────────
+       SCRIPTS
+       ───────────────────────────────────────────────── -->
+  <!-- Howler.js -->
+  <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <!-- Reveal.js -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+
+  <!-- Site JS -->
+  <script src="js/sound.js"></script>
+  <script src="js/particles.js"></script>
+
+  <script>
+    // ══════════════════════════════════════════════════════════
+    //  TYPEWRITER ENGINE
+    // ══════════════════════════════════════════════════════════
+    const activeTimers = [];
+
+    function clearAllTimers() {
+      activeTimers.forEach(id => clearTimeout(id));
+      activeTimers.length = 0;
+    }
+
+    function typewrite(el, text, speed, onDone) {
+      el.textContent = '';
+      el.classList.remove('tw-done');
+      el.style.opacity = '1';
+
+      // Add blinking cursor
+      const cursor = document.createElement('span');
+      cursor.className = 'tw-cursor';
+      el.appendChild(cursor);
+
+      let i = 0;
+      function tick() {
+        if (i < text.length) {
+          const char = text[i++];
+          cursor.before(char);
+          if (char !== ' ') SoundManager.playSfx('typing');
+          const t = setTimeout(tick, speed);
+          activeTimers.push(t);
+        } else {
+          cursor.remove();
+          el.classList.add('tw-done');
+          if (onDone) onDone();
+        }
+      }
+      tick();
+    }
+
+    function runSlideAnimations(section) {
+      clearAllTimers();
+
+      // Reset all animatable elements on this slide
+      section.querySelectorAll('[data-tw]').forEach(el => {
+        el.textContent = '';
+        el.style.opacity = '0';
+        el.classList.remove('tw-done');
+      });
+      section.querySelectorAll('[data-fade]').forEach(el => {
+        el.classList.remove('fade-done');
+      });
+
+      // Schedule typewriter elements
+      section.querySelectorAll('[data-tw]').forEach(el => {
+        const text  = el.dataset.tw;
+        const speed = parseInt(el.dataset.twSpeed || '20', 10);
+        const delay = parseInt(el.dataset.twDelay || '0', 10);
+        const color = el.dataset.twColor;
+        if (color) el.style.color = color;
+        const t = setTimeout(() => typewrite(el, text, speed), delay);
+        activeTimers.push(t);
+      });
+
+      // Schedule fade elements
+      section.querySelectorAll('[data-fade]').forEach(el => {
+        const delay = parseInt(el.dataset.fadeDelay || '0', 10);
+        const t = setTimeout(() => el.classList.add('fade-done'), delay);
+        activeTimers.push(t);
+      });
+    }
+
+    // ══════════════════════════════════════════════════════════
+    //  REVEAL.JS INITIALIZATION
+    // ══════════════════════════════════════════════════════════
+    let isStarted = false;
+
+    Reveal.initialize({
+      hash: false,
+      controls: false,
+      progress: true,
+      center: true,
+      transition: 'fade',
+      transitionSpeed: 'default',
+      backgroundTransition: 'none',
+      keyboard: false,
+      touch: false,
+      fragments: false,   // We handle our own reveal system
+    });
+
+    // ── Build slide nav dots ──────────────────────────────────
+    const TOTAL_SLIDES = 9;
+    const navEl = document.getElementById('slide-nav');
+    const dots = [];
+
+    for (let i = 0; i < TOTAL_SLIDES; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slide-dot';
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        if (!isStarted) return;
+        Reveal.slide(i);
+        SoundManager.playSfx('click');
+      });
+      navEl.appendChild(dot);
+      dots.push(dot);
+    }
+
+    function updateDots(idx) {
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+
+    // ── Reveal event listeners ────────────────────────────────
+    Reveal.on('slidechanged', ({ indexh, currentSlide }) => {
+      if (!isStarted) return;
+      SoundManager.playSfx('transition');
+      updateDots(indexh);
+      document.getElementById('scroll-hint').style.opacity =
+        indexh === TOTAL_SLIDES - 1 ? '0' : '1';
+      // Run typewriter + fade animations for the new slide
+      runSlideAnimations(currentSlide);
+    });
+
+    Reveal.on('ready', ({ currentSlide }) => {
+      updateDots(0);
+      // We don't run slide animations automatically on ready, 
+      // they will run when the user clicks INITIATE
+    });
+
+    // ── Start Screen logic ────────────────────────────────────
+    document.getElementById('init-btn').addEventListener('click', () => {
+      try {
+        isStarted = true;
+        
+        const screen = document.getElementById('start-screen');
+        screen.classList.add('hidden');
+        
+        // Enable Reveal interaction
+        Reveal.configure({ keyboard: true, touch: true });
+        Reveal.layout();
+
+        // Start audio
+        SoundManager.playMusic();
+        SoundManager.playSfx('reveal');
+
+        // Manually trigger the first slide's animation
+        setTimeout(() => {
+          clearAllTimers();
+          const firstSlide = Reveal.getCurrentSlide();
+          if (firstSlide) {
+            runSlideAnimations(firstSlide);
+          }
+        }, 100);
+      } catch (err) {
+        console.error("Initiation error:", err);
+      }
+    });
+
+    // ── Skip button ───────────────────────────────────────────
+    document.getElementById('skip-btn').addEventListener('click', () => {
+      SoundManager.playSfx('click');
+      Reveal.slide(TOTAL_SLIDES - 1);
+    });
+
+    // ── Left mouse button anywhere → advance slide ────────────
+    window.addEventListener('mousedown', (e) => {
+      if (!isStarted || e.button !== 0) return; // only left click and after start
+      const excluded = '#music-toggle, #skip-btn, .slide-nav, .slide-dot, #enter-btn, .cta-enter, a, button';
+      if (e.target.closest(excluded)) return;
+      SoundManager.playSfx('transition');
+      Reveal.next();
+    });
+
+    // ── Enter button transition ───────────────────────────────
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('#enter-btn');
+      if (!btn) return;
+      e.preventDefault();
+      SoundManager.playSfx('select');
+      const overlay = document.getElementById('page-transition');
+      overlay.style.transition = 'opacity 0.4s ease';
+      overlay.style.opacity = '1';
+      setTimeout(() => { window.location.href = 'challenges.html'; }, 420);
+    });
+  </script>
+</body>
+</html>

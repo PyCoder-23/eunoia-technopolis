@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission 001 — Technopolis Protocol</title>
+  <meta name="description" content="Mission 001: System Alpha Failure. Restore the first critical system of Eunoia Technopolis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/problem.css" />
+</head>
+<body data-music="assets/music/command_center.mp3">
+
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div id="page-transition"></div>
+  <button id="music-toggle" title="Toggle Music" aria-label="Toggle background music">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+
+  <nav class="top-nav">
+    <a href="index.html" class="nav-logo">⚡ TECHNOPOLIS PROTOCOL</a>
+    <ul class="nav-links">
+      <li><a href="challenges.html">MISSIONS</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── Problem Hero ─── -->
+  <div class="problem-hero">
+    <div class="problem-breadcrumb">
+      <a href="challenges.html" id="back-btn">← COMMAND CENTER</a> / MISSION 001
+    </div>
+    <div class="problem-meta">
+      <span class="problem-id">MISSION // 001</span>
+      <span class="badge badge-easy">EASY</span>
+    </div>
+    <h1><span class="highlight">System Alpha</span> Failure</h1>
+    <p class="problem-tagline">Industrial District — Zone A &nbsp;·&nbsp; Algorithmic Crisis Level: LOW</p>
+    <div class="hero-divider"></div>
+  </div>
+
+  <div class="problem-content">
+
+    <!-- Story -->
+    <div class="story-section">
+      <div class="story-label">INCIDENT REPORT</div>
+      <div class="story-text">
+        <p data-typewriter>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In the Industrial District of Eunoia Technopolis, a critical subsystem has unexpectedly shut down, halting operations across Zone A.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Operators are reporting cascading errors — the root cause has been traced to a faulty algorithmic scheduler.</p>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. <strong>You have been dispatched to resolve the anomaly before it propagates to adjacent zones.</strong></p>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="mission-section">
+      <div class="mission-label">MISSION OBJECTIVE</div>
+      <p class="mission-objective">
+        <strong>[Placeholder]</strong> — This mission objective will be filled in once the problem details are provided.
+        Your task will involve devising an efficient algorithm to resolve the crisis in Zone A.
+        The solution should handle the given constraints within the time limit.
+      </p>
+    </div>
+
+    <!-- Problem Statement -->
+    <div class="problem-statement">
+      <div class="problem-tabs">
+        <div class="problem-tab active" data-tab="tab-statement-1">STATEMENT</div>
+        <div class="problem-tab" data-tab="tab-examples-1">EXAMPLES</div>
+        <div class="problem-tab" data-tab="tab-constraints-1">CONSTRAINTS</div>
+      </div>
+
+      <div class="problem-tab-content active" id="tab-statement-1">
+        <div class="ps-section">
+          <h3>Problem</h3>
+          <p>
+            [Problem statement placeholder] — Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="ps-section">
+          <h3>Input</h3>
+          <p>[Input format placeholder] — Describe the input format here. E.g., first line contains integer N, followed by N space-separated integers.</p>
+        </div>
+        <div class="ps-section">
+          <h3>Output</h3>
+          <p>[Output format placeholder] — Describe the expected output here.</p>
+        </div>
+      </div>
+
+      <div class="problem-tab-content" id="tab-examples-1">
+        <div class="ps-section">
+          <h3>Sample Input 1</h3>
+          <div class="io-sample">
+            <div class="io-sample-header"><span>INPUT</span><span>Sample 1</span></div>
+            <pre>5
+1 2 3 4 5</pre>
+          </div>
+          <h3>Sample Output 1</h3>
+          <div class="io-sample">
+            <div class="io-sample-header"><span>OUTPUT</span><span>Sample 1</span></div>
+            <pre>15</pre>
+          </div>
+          <p style="color:rgba(200,216,240,0.4); font-family:var(--font-mono); font-size:.75rem; margin-top:.5rem;">[Explanation placeholder]</p>
+        </div>
+      </div>
+
+      <div class="problem-tab-content" id="tab-constraints-1">
+        <div class="ps-section">
+          <h3>Constraints</h3>
+          <table class="constraints-table">
+            <tr><td>Time Limit</td><td>1 second</td></tr>
+            <tr><td>Memory Limit</td><td>256 MB</td></tr>
+            <tr><td>N</td><td>1 ≤ N ≤ [placeholder]</td></tr>
+            <tr><td>Values</td><td>[constraint placeholder]</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="submit-section">
+      <div class="mission-complete">// SOLUTION READY? UPLOAD TO CODEFORCES</div>
+      <h2>Submit Your Fix, Commander</h2>
+      <p>Your code will be judged on the Codeforces platform. Make sure your solution compiles and handles all edge cases.</p>
+      <div class="submit-actions">
+        <a
+          href="https://codeforces.com/contest/YOUR_CONTEST_ID/submit/A"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary btn-lg"
+          id="submit-btn"
+        >
+          ⚡ SUBMIT SOLUTION
+        </a>
+        <a href="challenges.html" class="btn btn-secondary">← BACK TO MISSIONS</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Problem Nav -->
+  <div class="problem-nav">
+    <span></span>
+    <a href="problem2.html">NEXT MISSION: 002 →</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/problem.js"></script>
+</body>
+</html>

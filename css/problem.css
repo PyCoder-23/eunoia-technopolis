@@ -1,0 +1,373 @@
+/* ═══════════════════════════════════════════════
+   PROBLEM PAGE — Styles
+   ═══════════════════════════════════════════════ */
+
+/* ── Problem Hero ── */
+.problem-hero {
+  padding: 7rem 2rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.problem-breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(200, 216, 240, 0.4);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+
+.problem-breadcrumb a {
+  color: var(--neon-blue);
+  text-decoration: none;
+  transition: text-shadow 0.2s;
+}
+
+.problem-breadcrumb a:hover { text-shadow: var(--glow-text); }
+
+.problem-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.problem-id {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--neon-purple);
+  letter-spacing: 0.15em;
+}
+
+.problem-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.problem-hero h1 span.highlight {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.problem-tagline {
+  font-size: 1.05rem;
+  color: rgba(200, 216, 240, 0.6);
+  margin-bottom: 2rem;
+}
+
+.hero-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--neon-blue), var(--neon-purple), transparent);
+  margin-bottom: 2rem;
+  opacity: 0.4;
+}
+
+/* ── Problem Content Area ── */
+.problem-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* ── Story Section ── */
+.story-section {
+  background: linear-gradient(135deg, rgba(13, 21, 48, 0.7), rgba(20, 12, 40, 0.7));
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-left: 3px solid var(--neon-purple);
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-section::before {
+  content: '"';
+  position: absolute;
+  top: -20px; left: 1rem;
+  font-family: Georgia, serif;
+  font-size: 8rem;
+  color: rgba(168, 85, 247, 0.1);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.story-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--neon-purple);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.story-label::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--neon-purple);
+}
+
+.story-text p {
+  font-size: 1rem;
+  color: rgba(200, 216, 240, 0.8);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.story-text p:last-child { margin-bottom: 0; }
+
+/* ── Mission Section ── */
+.mission-section {
+  background: linear-gradient(135deg, rgba(13, 21, 48, 0.7), rgba(6, 20, 35, 0.7));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-left: 3px solid var(--neon-blue);
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mission-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--neon-blue);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mission-label::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--neon-blue);
+}
+
+.mission-objective {
+  font-size: 1.08rem;
+  color: rgba(200, 216, 240, 0.85);
+  line-height: 1.7;
+}
+
+.mission-objective strong {
+  color: var(--neon-blue);
+}
+
+/* ── Problem Statement ── */
+.problem-statement {
+  background: rgba(10, 15, 30, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.problem-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+  background: rgba(13, 21, 48, 0.6);
+}
+
+.problem-tab {
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(200, 216, 240, 0.4);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+  user-select: none;
+}
+
+.problem-tab.active {
+  color: var(--neon-blue);
+  border-bottom-color: var(--neon-blue);
+}
+
+.problem-tab-content {
+  display: none;
+  padding: 2rem;
+}
+
+.problem-tab-content.active { display: block; }
+
+/* ── Problem Statement body text ── */
+.ps-section {
+  margin-bottom: 1.75rem;
+}
+
+.ps-section h3 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--neon-blue);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ps-section h3::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 212, 255, 0.15);
+}
+
+.ps-section p {
+  font-size: 0.95rem;
+  color: rgba(200, 216, 240, 0.75);
+  line-height: 1.8;
+}
+
+/* ── Code / IO blocks ── */
+.io-sample {
+  background: rgba(3, 7, 18, 0.8);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.io-sample-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: rgba(13, 21, 48, 0.8);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: rgba(200, 216, 240, 0.4);
+}
+
+.io-sample pre {
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--neon-green);
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* ── Constraints table ── */
+.constraints-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.constraints-table tr {
+  border-bottom: 1px solid rgba(0, 212, 255, 0.06);
+}
+
+.constraints-table td {
+  padding: 0.6rem 1rem;
+  color: rgba(200, 216, 240, 0.7);
+}
+
+.constraints-table td:first-child {
+  color: var(--neon-cyan);
+  width: 40%;
+}
+
+/* ── Submit Section ── */
+.submit-section {
+  background: linear-gradient(135deg, rgba(13, 21, 48, 0.8), rgba(20, 10, 40, 0.8));
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 8px;
+  padding: 2.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.04), transparent 70%);
+  pointer-events: none;
+}
+
+.submit-section .mission-complete {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--neon-green);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.submit-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.submit-section p {
+  font-size: 0.9rem;
+  color: rgba(200, 216, 240, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.submit-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Problem Nav (prev/next) ── */
+.problem-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  gap: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+.problem-nav a {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: rgba(200, 216, 240, 0.4);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-fast);
+}
+
+.problem-nav a:hover {
+  color: var(--neon-blue);
+  text-shadow: var(--glow-text);
+}

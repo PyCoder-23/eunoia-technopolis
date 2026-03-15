@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mission 006 — Technopolis Protocol</title>
+  <meta name="description" content="Mission 006: System Zeta Core Breach. Restore the sixth and final critical system of Eunoia Technopolis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/problem.css" />
+
+  <style>
+    /* Extra glow for the final boss mission */
+    .problem-hero h1 { filter: drop-shadow(0 0 20px rgba(236,72,153,0.4)); }
+    .story-section { border-left-color: var(--neon-pink); }
+    .story-section .story-label { color: var(--neon-pink); }
+    .story-section .story-label::before { background: var(--neon-pink); }
+    .submit-section { border-color: rgba(236,72,153,0.3); box-shadow: 0 0 40px rgba(236,72,153,0.06); }
+  </style>
+</head>
+<body data-music="assets/music/command_center.mp3">
+
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div id="page-transition"></div>
+  <button id="music-toggle" title="Toggle Music" aria-label="Toggle background music">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+
+  <nav class="top-nav">
+    <a href="index.html" class="nav-logo">⚡ TECHNOPOLIS PROTOCOL</a>
+    <ul class="nav-links">
+      <li><a href="challenges.html">MISSIONS</a></li>
+    </ul>
+  </nav>
+
+  <div class="problem-hero">
+    <div class="problem-breadcrumb">
+      <a href="challenges.html" id="back-btn">← COMMAND CENTER</a> / MISSION 006
+    </div>
+    <div class="problem-meta">
+      <span class="problem-id">MISSION // 006</span>
+      <span class="badge badge-hard">HARD</span>
+      <span class="badge" style="background:rgba(236,72,153,0.1);color:var(--neon-pink);border-color:var(--neon-pink);">FINAL MISSION</span>
+    </div>
+    <h1><span class="highlight">System Zeta</span> — Core Breach</h1>
+    <p class="problem-tagline">Orbital Relay — Zone Z &nbsp;·&nbsp; Algorithmic Crisis Level: CRITICAL</p>
+    <div class="hero-divider"></div>
+  </div>
+
+  <div class="problem-content">
+
+    <div class="story-section">
+      <div class="story-label">⚠ MAXIMUM ALERT — CORE BREACH IMMINENT</div>
+      <div class="story-text">
+        <p data-typewriter>The Orbital Relay at Zone Z is the final line of defense for Eunoia Technopolis. It maintains the satellite grid and long-range communications that keep the city's automated defenses active.</p>
+        <p>A catastrophic core breach in its neural processing unit has bypassed all fail-safes. The satellites are losing their orbits, and the defense grid is starting to flicker.</p>
+        <p>This is it, Commander. <strong>The true final mission. If the Orbital Relay falls, Eunoia Technopolis will be blind and defenseless.</strong> The entire city's legacy depends on your final algorithmic solution.</p>
+      </div>
+    </div>
+
+    <div class="mission-section">
+      <div class="mission-label">MISSION OBJECTIVE</div>
+      <p class="mission-objective">
+        <strong>[Placeholder]</strong> — This mission objective will be filled in once the problem details are provided.
+        Your solution must be exceptionally optimized. As the hardest challenge in the Technopolis Protocol,
+        it requires advanced algorithmic techniques and perfect resource management.
+      </p>
+    </div>
+
+    <div class="problem-statement">
+      <div class="problem-tabs">
+        <div class="problem-tab active" data-tab="tab-statement-6">STATEMENT</div>
+        <div class="problem-tab" data-tab="tab-examples-6">EXAMPLES</div>
+        <div class="problem-tab" data-tab="tab-constraints-6">CONSTRAINTS</div>
+      </div>
+
+      <div class="problem-tab-content active" id="tab-statement-6">
+        <div class="ps-section">
+          <h3>Problem</h3>
+          <p>[Problem statement placeholder] — The city's fate rests on this final calculation. You must derive the optimal orbital trajectory for all satellites simultaneously.</p>
+        </div>
+        <div class="ps-section">
+          <h3>Input</h3>
+          <p>[Input format placeholder] — Satellite telemetry data and priority levels.</p>
+        </div>
+        <div class="ps-section">
+          <h3>Output</h3>
+          <p>[Output format placeholder] — Minimum total energy required to stabilize the grid.</p>
+        </div>
+      </div>
+
+      <div class="problem-tab-content" id="tab-examples-6">
+        <div class="ps-section">
+          <h3>Sample Input 1</h3>
+          <div class="io-sample">
+            <div class="io-sample-header"><span>INPUT</span><span>Sample 1</span></div>
+            <pre>100 500
+[telemetry_data_placeholder]</pre>
+          </div>
+          <h3>Sample Output 1</h3>
+          <div class="io-sample">
+            <div class="io-sample-header"><span>OUTPUT</span><span>Sample 1</span></div>
+            <pre>998244353</pre>
+          </div>
+          <p style="color:rgba(200,216,240,0.4); font-family:var(--font-mono); font-size:.75rem; margin-top:.5rem;">[Explanation placeholder]</p>
+        </div>
+      </div>
+
+      <div class="problem-tab-content" id="tab-constraints-6">
+        <div class="ps-section">
+          <h3>Constraints</h3>
+          <table class="constraints-table">
+            <tr><td>Time Limit</td><td>4 seconds</td></tr>
+            <tr><td>Memory Limit</td><td>1024 MB</td></tr>
+            <tr><td>N</td><td>1 ≤ N ≤ 200,000</td></tr>
+            <tr><td>K</td><td>1 ≤ K ≤ 500,000</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-section">
+      <div class="mission-complete" style="color:var(--neon-pink);">// ULTIMATE CHALLENGE — TOTAL SYSTEM RECOVERY</div>
+      <h2>The Clock is Ticking, Commander</h2>
+      <p>Submit your final solution. Once this system is restored, Eunoia Technopolis will be safe from the threat.</p>
+      <div class="submit-actions">
+        <a href="https://codeforces.com/contest/YOUR_CONTEST_ID/submit/F" target="_blank" rel="noopener" class="btn btn-primary btn-lg" id="submit-btn" style="border-color:var(--neon-pink);color:var(--neon-pink);box-shadow:0 0 20px rgba(236,72,153,0.6),0 0 60px rgba(236,72,153,0.2);">⚡ SUBMIT FINAL SOLUTION</a>
+        <a href="challenges.html" class="btn btn-secondary">← BACK TO MISSIONS</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="problem-nav">
+    <a href="problem5.html">← MISSION 005</a>
+    <span style="color:var(--neon-pink);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;">TOTAL RECOVERY STANDING BY</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/problem.js"></script>
+</body>
+</html>

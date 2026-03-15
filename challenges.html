@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Center — Technopolis Protocol</title>
+  <meta name="description" content="Eunoia Technopolis Command Center. Select your mission and save the city." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/challenges.css" />
+</head>
+<body data-music="assets/music/command_center.mp3">
+
+  <!-- Background -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div id="page-transition"></div>
+
+  <!-- Music toggle -->
+  <button id="music-toggle" title="Toggle Music" aria-label="Toggle background music">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+  </button>
+
+  <!-- Top Nav -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-logo">⚡ TECHNOPOLIS PROTOCOL</a>
+    <ul class="nav-links">
+      <li><a href="index.html">INTRO</a></li>
+      <li><a href="challenges.html" style="color:var(--neon-blue);">MISSIONS</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── Command Center Hero ─── -->
+  <header class="command-hero">
+    <div class="status-line">GUARDIAN PROTOCOL ACTIVE — ALL SYSTEMS MONITORED</div>
+    <h1>EUNOIA TECHNOPOLIS<br/>COMMAND CENTER</h1>
+    <div class="subtitle">ACTIVE SYSTEM FAILURES</div>
+    <div class="threat-bar">
+      <span class="threat-pulse"></span>
+      THREAT LEVEL: CRITICAL &nbsp;·&nbsp; 6 SYSTEMS OFFLINE &nbsp;·&nbsp; CLOCK RUNNING
+    </div>
+  </header>
+
+  <!-- ─── Live Stats ─── -->
+  <div class="mission-stats">
+    <div class="stat-item">
+      <span class="stat-value" id="stat-timer">02:00</span>
+      <span class="stat-label">Time Remaining</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value" id="stat-missions">6</span>
+      <span class="stat-label">Active Missions</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value" id="stat-solved">0</span>
+      <span class="stat-label">Systems Restored</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">8.4M</span>
+      <span class="stat-label">Citizens Affected</span>
+    </div>
+  </div>
+
+  <!-- ─── Section Header ─── -->
+  <div class="section-header">
+    <div class="label">// SELECT MISSION</div>
+    <h2>CHOOSE YOUR TARGET SYSTEM</h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <!-- ─── Challenge Cards Grid ─── -->
+  <main class="challenges-grid">
+
+    <!-- Card 1 -->
+    <a class="challenge-card" href="problem1.html" id="card-1">
+      <div class="card-glow"></div>
+      <div class="card-number">MISSION // 001</div>
+      <span class="card-icon">🏭</span>
+      <h3 class="card-title">System Alpha Failure</h3>
+      <div class="card-location">📍 Industrial District — Zone A</div>
+      <p class="card-desc">
+        A critical subsystem has gone offline. Restore order using
+        your algorithmic reasoning before cascading failures spread.
+      </p>
+      <div class="card-footer">
+        <span class="badge badge-easy">EASY</span>
+        <span class="card-btn">START MISSION <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a class="challenge-card" href="problem2.html" id="card-2">
+      <div class="card-glow"></div>
+      <div class="card-number">MISSION // 002</div>
+      <span class="card-icon">🚦</span>
+      <h3 class="card-title">System Beta Collapse</h3>
+      <div class="card-location">📍 Central Hub — Zone B</div>
+      <p class="card-desc">
+        Urban control nodes are unresponsive. Rewrite the routing logic
+        before the sector descends into chaos.
+      </p>
+      <div class="card-footer">
+        <span class="badge badge-easy">EASY</span>
+        <span class="card-btn">START MISSION <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a class="challenge-card" href="problem3.html" id="card-3">
+      <div class="card-glow"></div>
+      <div class="card-number">MISSION // 003</div>
+      <span class="card-icon">🚁</span>
+      <h3 class="card-title">System Gamma Malfunction</h3>
+      <div class="card-location">📍 Aerial Grid — Zone C</div>
+      <p class="card-desc">
+        Autonomous units across the city have lost coordination.
+        Recalibrate their pathfinding to restore operations.
+      </p>
+      <div class="card-footer">
+        <span class="badge badge-easy">EASY</span>
+        <span class="card-btn">START MISSION <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- Card 4 -->
+    <a class="challenge-card" href="problem4.html" id="card-4">
+      <div class="card-glow"></div>
+      <div class="card-number">MISSION // 004</div>
+      <span class="card-icon">🏥</span>
+      <h3 class="card-title">System Delta Emergency</h3>
+      <div class="card-location">📍 Medical Sector — Zone D</div>
+      <p class="card-desc">
+        A life-critical network scheduler is deadlocked.
+        Apply your knowledge of graphs to unlock the pipeline.
+      </p>
+      <div class="card-footer">
+        <span class="badge badge-medium">MEDIUM</span>
+        <span class="card-btn">START MISSION <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- Card 5 -->
+    <a class="challenge-card" href="problem5.html" id="card-5">
+      <div class="card-glow"></div>
+      <div class="card-number">MISSION // 005</div>
+      <span class="card-icon">⚡</span>
+      <h3 class="card-title">System Epsilon — Grid Link</h3>
+      <div class="card-location">📍 Energy Grid — Zone E</div>
+      <p class="card-desc">
+        The city's primary power loop is facing synchronization issues.
+        Optimize the transfer protocols to maintain stability.
+      </p>
+      <div class="card-footer">
+        <span class="badge badge-medium">MEDIUM</span>
+        <span class="card-btn">START MISSION <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- Card 6 -->
+    <a class="challenge-card" href="problem6.html" id="card-6">
+      <div class="card-glow"></div>
+      <div class="card-number">MISSION // 006</div>
+      <span class="card-icon">🛰️</span>
+      <h3 class="card-title">System Zeta — Core Breach</h3>
+      <div class="card-location">📍 Orbital Relay — Zone Z</div>
+      <p class="card-desc">
+        A catastrophic core breach is imminent. Only the most advanced
+        algorithmic optimizations can prevent a total blackout.
+      </p>
+      <div class="card-footer">
+        <span class="badge badge-hard">HARD</span>
+        <span class="card-btn">START MISSION <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+  </main>
+
+  <!-- ─── City Map ─── -->
+  <section class="city-map-section">
+    <div class="section-header" style="padding-left:0; padding-bottom:1.5rem;">
+      <div class="label">// TACTICAL VIEW</div>
+      <h2>EUNOIA TECHNOPOLIS — LIVE MAP</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="city-map-wrapper">
+      <div class="city-map-bg"></div>
+      <div class="city-map-title">EUNOIA TECHNOPOLIS · THREAT GRID · LIVE</div>
+
+      <!-- Connecting lines SVG -->
+      <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <marker id="arrowhead" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+            <path d="M0,0 L4,2 L0,4" fill="rgba(0,212,255,0.3)" />
+          </marker>
+        </defs>
+        <line x1="22" y1="60" x2="40" y2="25" stroke="rgba(0,212,255,0.1)" stroke-width="0.3" stroke-dasharray="1,2" />
+        <line x1="40" y1="25" x2="65" y2="45" stroke="rgba(0,212,255,0.1)" stroke-width="0.3" stroke-dasharray="1,2" />
+        <line x1="65" y1="45" x2="55" y2="70" stroke="rgba(0,212,255,0.1)" stroke-width="0.3" stroke-dasharray="1,2" />
+        <line x1="55" y1="70" x2="78" y2="30" stroke="rgba(0,212,255,0.1)" stroke-width="0.3" stroke-dasharray="1,2" />
+        <line x1="22" y1="60" x2="55" y2="70" stroke="rgba(168,85,247,0.08)" stroke-width="0.3" stroke-dasharray="1,2" />
+        <line x1="55" y1="70" x2="85" y2="80" stroke="rgba(236,72,153,0.1)" stroke-width="0.3" stroke-dasharray="1,2" />
+      </svg>
+
+      <a href="problem1.html" class="map-location map-loc-1" title="Mission 001">
+        <div class="map-pin">🏭</div>
+        <span class="map-label">ZONE A</span>
+      </a>
+      <a href="problem2.html" class="map-location map-loc-2" title="Mission 002">
+        <div class="map-pin">🚦</div>
+        <span class="map-label">ZONE B</span>
+      </a>
+      <a href="problem3.html" class="map-location map-loc-3" title="Mission 003">
+        <div class="map-pin">🚁</div>
+        <span class="map-label">ZONE C</span>
+      </a>
+      <a href="problem4.html" class="map-location map-loc-4" title="Mission 004">
+        <div class="map-pin">🏥</div>
+        <span class="map-label">ZONE D</span>
+      </a>
+      <a href="problem5.html" class="map-location map-loc-5" title="Mission 005">
+        <div class="map-pin">⚡</div>
+        <span class="map-label">ZONE E</span>
+      </a>
+      <a href="problem6.html" class="map-location map-loc-6" title="Mission 006">
+        <div class="map-pin">🛰️</div>
+        <span class="map-label">ZONE Z</span>
+      </a>
+
+      <!-- Decorative Pins (Non-clickable) -->
+      <div class="map-deco map-deco-1" title="Substation 04"></div>
+      <div class="map-deco map-deco-2" title="Data Relay 09"></div>
+      <div class="map-deco map-deco-3" title="Shield Generator"></div>
+      <div class="map-deco map-deco-4" title="Emergency Shelter"></div>
+
+      <!-- Live Scan Lines -->
+      <div class="map-scan-line"></div>
+      
+      <!-- Tactical Overlays -->
+      <div class="map-overlay-text bot-left">COORD: 34.908 / -112.44</div>
+      <div class="map-overlay-text top-right">SCANNING SECTOR 07...</div>
+    </div>
+  </section>
+
+  <!-- ─── Leaderboard CTA ─── -->
+  <div class="leaderboard-cta">
+    <div class="leaderboard-card glow-border">
+      <div class="leaderboard-icon">🏆</div>
+      <h3>CITY RANKINGS</h3>
+      <p>See how your fellow guardians rank in the mission to save Eunoia Technopolis.</p>
+      <a
+        href="https://codeforces.com/contest/YOUR_CONTEST_ID/standings"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-secondary"
+        id="leaderboard-btn"
+      >
+        VIEW LEADERBOARD
+      </a>
+    </div>
+  </div>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer">
+    EUNOIA TECHNOPOLIS · GUARDIAN PROTOCOL v2.0 · ALL SYSTEMS MONITORED
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/challenges.js"></script>
+</body>
+</html>
