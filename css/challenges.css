@@ -27,14 +27,24 @@
 
 .command-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
   font-weight: 900;
   letter-spacing: 0.1em;
-  background: linear-gradient(135deg, #fff 0%, var(--neon-blue) 50%, var(--neon-purple) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 0.5rem;
+  display: block;
+  
+  /* Fallback For Safety */
+  color: #ffffff; 
+  
+  /* Gradient Clipping - Refined for deployment */
+  background-image: linear-gradient(to right, #ffffff, #00d4ff, #a855f7);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Remove transform if it conflicts */
+  filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
 }
 
 .command-hero .subtitle {

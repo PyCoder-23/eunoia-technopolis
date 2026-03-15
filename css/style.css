@@ -104,8 +104,8 @@ body::after {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.04) 2px,
-    rgba(0, 0, 0, 0.04) 4px
+    rgba(0, 0, 0, 0.02) 2px,
+    rgba(0, 0, 0, 0.02) 4px
   );
   pointer-events: none;
   z-index: 1000;
@@ -121,10 +121,15 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 6vw, 4.5rem);
   font-weight: 900;
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-cyan));
+  
+  /* Solid Fallback */
+  color: #00d4ff; 
+  
+  background-image: linear-gradient(to right, #00d4ff, #a855f7, #06b6d4);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
   text-shadow: none;
   filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
   line-height: 1.1;
@@ -284,7 +289,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
-  color: rgba(200, 216, 240, 0.6);
+  color: rgba(200, 216, 240, 0.85);
   text-decoration: none;
   text-transform: uppercase;
   transition: var(--transition-fast);

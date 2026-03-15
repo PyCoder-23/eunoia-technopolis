@@ -60,10 +60,11 @@
       font-size: clamp(2.5rem, 8vw, 6rem);
       font-weight: 900;
       letter-spacing: 0.12em;
-      background: linear-gradient(135deg, #fff 0%, var(--neon-blue) 60%, var(--neon-purple) 100%);
+      color: #ffffff; /* Solid fallback */
+      background: linear-gradient(to right, #ffffff, #00d4ff, #a855f7);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 30px rgba(0,212,255,0.5));
       line-height: 1;
       margin-bottom: 0.5rem;
@@ -106,10 +107,11 @@
       font-size: clamp(4rem, 14vw, 10rem);
       font-weight: 900;
       letter-spacing: 0.15em;
-      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+      color: #00d4ff; /* Solid fallback */
+      background: linear-gradient(to right, #00d4ff, #a855f7, #ec4899);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 40px rgba(0,212,255,0.7));
       line-height: 1;
       animation: text-glow-pulse 3s ease infinite;
@@ -133,10 +135,11 @@
     }
 
     .slide-you-text em {
-      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+      color: #00d4ff; /* Solid fallback */
+      background: linear-gradient(to right, #00d4ff, #a855f7);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       font-style: normal;
     }
 
