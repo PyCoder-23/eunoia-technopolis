@@ -60,14 +60,21 @@
       font-size: clamp(2.5rem, 8vw, 6rem);
       font-weight: 900;
       letter-spacing: 0.12em;
+      display: inline-block;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0 0.2em;
+      
       color: #ffffff; /* Solid fallback */
-      background: linear-gradient(to right, #ffffff, #00d4ff, #a855f7);
+      background: linear-gradient(to right, #ffffff 5%, #00d4ff 50%, #a855f7 95%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 30px rgba(0,212,255,0.5));
-      line-height: 1;
+      
+      filter: drop-shadow(0 0 25px rgba(0,212,255,0.4));
+      line-height: 1.2;
       margin-bottom: 0.5rem;
+      text-transform: uppercase;
     }
 
     .slide-year {
@@ -107,14 +114,21 @@
       font-size: clamp(4rem, 14vw, 10rem);
       font-weight: 900;
       letter-spacing: 0.15em;
+      display: inline-block;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0 0.25em;
+
       color: #00d4ff; /* Solid fallback */
-      background: linear-gradient(to right, #00d4ff, #a855f7, #ec4899);
+      background: linear-gradient(to right, #00d4ff 0%, #a855f7 50%, #ec4899 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 40px rgba(0,212,255,0.7));
+      
+      filter: drop-shadow(0 0 35px rgba(0,212,255,0.6));
       line-height: 1;
       animation: text-glow-pulse 3s ease infinite;
+      text-transform: uppercase;
     }
 
     .slide-hero-subtitle {
@@ -135,6 +149,8 @@
     }
 
     .slide-you-text em {
+      display: inline-block;
+      padding: 0 0.15em;
       color: #00d4ff; /* Solid fallback */
       background: linear-gradient(to right, #00d4ff, #a855f7);
       -webkit-background-clip: text;
