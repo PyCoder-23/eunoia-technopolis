@@ -104,8 +104,8 @@ body::after {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.02) 2px,
-    rgba(0, 0, 0, 0.02) 4px
+    rgba(0, 0, 0, 0.005) 2px,
+    rgba(0, 0, 0, 0.005) 4px
   );
   pointer-events: none;
   z-index: 1000;
@@ -122,16 +122,18 @@ h1, h2, h3, h4 {
   font-size: clamp(2rem, 6vw, 4.5rem);
   font-weight: 900;
   
-  /* Solid Fallback */
-  color: #00d4ff; 
+  /* Searing Core */
+  color: #ffffff; 
   
-  background-image: linear-gradient(to right, #00d4ff, #a855f7, #06b6d4);
+  background-image: linear-gradient(to right, #ffffff, #00f2ff, #ffffff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   
   text-shadow: none;
-  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+  filter: 
+    drop-shadow(0 0 10px rgba(0, 212, 255, 0.8))
+    drop-shadow(0 0 30px rgba(0, 212, 255, 0.4));
   line-height: 1.1;
 }
 
